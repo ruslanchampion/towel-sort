@@ -1,10 +1,15 @@
-
-// You should implement your task here.
-
 module.exports = function towelSort (matrix) {
+  if (matrix == undefined) {
+    return []
+  }
+  const matrixs = matrix;
 let newArr = []
-matrix.forEach((item) => {newArr.push(...item)})
-newArr.sort((a,b) => a-b)
-    
+matrixs.forEach((item, index) => {
+  if (index %2 ==0) {
+    newArr.push(...item)
+  } else {
+  newArr.push(...item.reverse())
+  }
+})   
   return newArr;
 }
